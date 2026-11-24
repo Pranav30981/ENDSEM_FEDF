@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #234b85;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            grid-column: 1 / -1;
+            color: #234b85;
+            font-size: 18px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 15px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #234b85;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .buttons {
+            grid-column: 1 / -1;
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        button {
+            flex: 1;
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit {
+            background: #234b85;
+            color: white;
+        }
+
+        .reset {
+            background: #ddd;
+            color: #333;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        /* Mobile Responsive Layout */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width, h2, .buttons {
+                grid-column: 1;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Admission Form</h1>
+    <p class="subtitle">Fill in the details to apply for admission</p>
+
+    <form class="form-grid">
+
+        <h2>Personal Information</h2>
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter full name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <select required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="Enter email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter phone number" required>
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" placeholder="Enter address">
+        </div>
+
+        <h2>Academic Information</h2>
+
+        <div class="form-group">
+            <label>Previous Qualification</label>
+            <select required>
+                <option value="">Select Qualification</option>
+                <option>10th</option>
+                <option>Intermediate</option>
+                <option>Diploma</option>
+                <option>Degree</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Percentage / CGPA</label>
+            <input type="number" step="0.01" placeholder="Enter marks">
+        </div>
+
+        <div class="form-group">
+            <label>Course Applying For</label>
+            <select required>
+                <option value="">Select Course</option>
+                <option>B.Tech</option>
+                <option>B.Sc</option>
+                <option>B.Com</option>
+                <option>BBA</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Admission Year</label>
+            <select>
+                <option>2026-2027</option>
+                <option>2027-2028</option>
+            </select>
+        </div>
+
+        <h2>Parent / Guardian Information</h2>
+
+        <div class="form-group">
+            <label>Parent Name</label>
+            <input type="text" placeholder="Enter parent name">
+        </div>
+
+        <div class="form-group">
+            <label>Parent Phone</label>
+            <input type="tel" placeholder="Enter parent phone">
+        </div>
+
+        <div class="form-group full-width">
+            <label>Additional Information</label>
+            <textarea placeholder="Enter any additional details"></textarea>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" class="submit">
+                Submit Application
+            </button>
+
+            <button type="reset" class="reset">
+                Reset Form
+            </button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
